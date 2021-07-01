@@ -21,3 +21,8 @@ jobs:
       run: dotnet restore Src/Serilog.Enrichers.Correlate.sln
     - name: Build
       run: dotnet build --no-restore Src/Serilog.Enrichers.Correlate.sln
+    - name: Publish NuGet
+      uses: brandedoutcast/publish-nuget@v2.5.5
+      with:
+        PROJECT_FILE_PATH: Src/Serilog.Enrichers.Correlate.sln
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
