@@ -18,6 +18,6 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore src/Serilog.Enrichers.Correlate.sln
+      run: dotnet restore Src/Serilog.Enrichers.Correlate.sln
     - name: Build
-      run: dotnet build --no-restore src/Serilog.Enrichers.Correlate.sln
+      run: dotnet build --no-restore Src/Serilog.Enrichers.Correlate.sln
