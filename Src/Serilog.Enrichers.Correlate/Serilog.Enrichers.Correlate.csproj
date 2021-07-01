@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright (c) Alexey Pozdnyakov 2021</Copyright>
+    <PackageProjectUrl>https://github.com/algel/serilog-enrichers-correlate</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/algel/serilog-enrichers-correlate</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>serilog correlate</PackageTags>
+    <Description>Enriches log by CorrelationId property from ICorrelationContextAccessor</Description>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Correlate.Abstractions" Version="3.3.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+  </ItemGroup>
+
+</Project>
