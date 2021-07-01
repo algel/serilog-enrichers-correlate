@@ -19,7 +19,39 @@ This library specifically provides a enricher for [Serilog](https://github.com/s
 
 ## Usage ###
 
-TBD
+Register in service collection
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddCorrelate()
+        .AddCorrelationContextEnricher();
+}
+```
+
+and configure logger
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        CreateHostBuilder(args).Build().Run();
+    }
+
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .UseSerilog(ConfigureLogger)
+            .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+
+    private static void ConfigureLogger(HostBuilderContext context, IServiceProvider serviceProvider, LoggerConfiguration loggerConfiguration)
+    {
+        loggerConfiguration
+            .WriteTo.Console()
+            .Enrich.WithCorrelate(serviceProvider);
+    }
+}
+```
 
 
 
