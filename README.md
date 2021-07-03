@@ -1,4 +1,5 @@
 # Serilog.Enrichers.Correlate
+
 [Serilog](https://github.com/serilog/serilog) enricher for [Correlate](https://github.com/skwasjer/Correlate). 
 
 Adds the CorrelationId property by populating the value from ICorrelationContextAccessor.
@@ -10,6 +11,8 @@ Install Serilog.Enrichers.Correlate via the Nuget package manager or `dotnet` cl
 ```powershell
 dotnet add package Serilog.Enrichers.Correlate
 ```
+[![Nuget](https://img.shields.io/nuget/v/Serilog.Enrichers.Correlate.svg)](https://www.nuget.org/packages?q=Serilog.Enrichers.Correlate)
+[![Nuget](https://img.shields.io/nuget/dt/Serilog.Enrichers.Correlate.svg)](https://www.nuget.org/packages?q=Serilog.Enrichers.Correlate)
 
 ## Correlation ID flow
 
